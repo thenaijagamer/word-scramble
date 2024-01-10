@@ -1,0 +1,50 @@
+// COLOR VARIABLES
+$color-primary-1: #7429c6;
+$color-primary-2: #c951e7;
+$color-secondary: #672171;
+$text-light: #f2f5f9;
+// $text-grey: #b6;
+$text-dark-grey: #4a5567;
+$color-dark: #030616;
+
+//RESPONSIVE BREAKPOINT
+$bp-large-desktop: 112.5em; //1800px
+$bp-tab-land: 75em; //1200px
+$bp-tab-port: 56.25em; //900px
+$bp-phone: 37.5em; //600px
+$bp-small-phone: 18.75em; //300px
+
+// BASE
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+  @media only screen and (min-width: $bp-large-desktop) {
+    font-size: 75%;
+  }
+  @media only screen and (max-width: $bp-tab-land) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: $bp-tab-port) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+  background-color: $very-dark-blue-1;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+// ::selection {
+//   background-color: $color-white;
+//   color: $dark-text;
+// }
