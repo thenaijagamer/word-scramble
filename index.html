@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Word scramble</title>
     <link
       rel="icon"
@@ -18,6 +18,40 @@
     />
   </head>
   <body>
+    <div class="container">
+      <div class="card">
+        <div class="card__title">Word Scramblle</div>
+        <div class="card__scrambled-words">relowf</div>
+        <div class="card__datas">
+          <div class="data data--tries">
+            <div class="data__tries-name">Tries (4/5):</div>
+            <div class="data__dot-box">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="data data--mistakes">
+            <div class="data__mistake-name">Mistakes:</div>
+            <div class="data__mistake-letters">a,e,w,t</div>
+          </div>
+        </div>
+        <div class="card__arranged-letters">
+          <div class="letter-box">f</div>
+          <div class="letter-box">l</div>
+          <div class="letter-box">0</div>
+          <div class="letter-box">w</div>
+          <div class="letter-box">e</div>
+          <div class="letter-box">r</div>
+        </div>
+        <div class="card__button-box">
+          <button class="btn btn--random">Random</button
+          ><button class="btn btn--reset">Reset</button>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -39,12 +39,16 @@ html {
 
 body {
   font-family: "Outfit", sans-serif;
-  min-height: 100vh;
-  background-color: $very-dark-blue-1;
-  text-transform: uppercase;
-  font-weight: 700;
+  height: 100vh;
+  background-image: url(../images/bg-guess-the-word.png);
 }
 // ::selection {
 //   background-color: $color-white;
 //   color: $dark-text;
 // }
+
+// typography
+// 32rem large
+// 20rem medium
+// 12rem small
+// 14rem button
