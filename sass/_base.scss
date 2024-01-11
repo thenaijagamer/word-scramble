@@ -3,7 +3,7 @@ $color-primary-1: #7429c6;
 $color-primary-2: #c951e7;
 $color-secondary: #672171;
 $text-light: #f2f5f9;
-// $text-grey: #b6;
+$text-grey: hsl(217, 16%, 65%);
 $color-dark-grey: #4a5567;
 $color-dark: #030616;
 
@@ -41,7 +41,7 @@ body {
   font-family: "Outfit", sans-serif;
   height: 100vh;
   background-image: url(../images/bg-guess-the-word.png);
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
