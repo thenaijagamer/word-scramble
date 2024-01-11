@@ -1,19 +1,111 @@
-.container {
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   max-width: 50rem;
+//   width: 90%;
+// }
+// typography
+// 32rem large
+// 20rem medium
+// 12rem small
+// 14rem button
+
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 50rem;
   width: 90%;
-}
-
-.card {
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 3rem;
   border-radius: 8px;
   background-color: $color-dark;
   text-align: center;
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: white;
+    background-image: linear-gradient(
+      from left,
+      $color-primary-1,
+      $color-primary-2
+    );
+
+    // clip: ;
+  }
+  &__scrambled-letters {
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    background-color: $color-dark-grey;
+    border-radius: 6px;
+    padding: 2rem;
+    letter-spacing: 2rem;
+    color: white;
+    width: 95%;
+  }
+  &__infos,
+  &__button-box {
+    color: $color-dark-grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__arranged-letters {
+    display: flex;
+    gap: 5px;
+    margin: 6rem 0;
+  }
+}
+
+.info {
+  font-size: 1.2rem;
+
+  &__mistake-letters,
+  &__dot-box {
+    margin-left: 5px;
+  }
+  &__mistake-letters {
+    color: white;
+  }
+  &__dot-box {
+    display: flex;
+    align-items: center;
+  }
+}
+.dot {
+  height: 1rem;
+  width: 1rem;
+  background-color: $color-primary-1;
+  border-radius: 50%;
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+
+.letter-box {
+  font-size: 2rem;
+  height: 5rem;
+  width: 5rem;
+  border: 2px solid $color-dark-grey;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    border: 2px solid $color-secondary;
+  }
+}
+
+.btn {
+  color: white;
+  font-size: 1.4rem;
+  background-color: $color-primary-2;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 3px $color-primary-2;
 }

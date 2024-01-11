@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  height: 100vh;
+  background-image: url(../images/bg-guess-the-word.png);
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50rem;
+  width: 90%;
+  padding: 3rem;
+  border-radius: 8px;
+  background-color: #030616;
+  text-align: center;
+}
+.card__title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: white;
+  background-image: linear-gradient(from left, #7429c6, #c951e7);
+}
+.card__scrambled-letters {
+  font-size: 3.2rem;
+  margin-bottom: 3rem;
+  background-color: #4a5567;
+  border-radius: 6px;
+  padding: 2rem;
+  letter-spacing: 2rem;
+  color: white;
+  width: 95%;
+}
+.card__infos, .card__button-box {
+  color: #4a5567;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.card__arranged-letters {
+  display: flex;
+  gap: 5px;
+  margin: 6rem 0;
+}
+
+.info {
+  font-size: 1.2rem;
+}
+.info__mistake-letters, .info__dot-box {
+  margin-left: 5px;
+}
+.info__mistake-letters {
+  color: white;
+}
+.info__dot-box {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  height: 1rem;
+  width: 1rem;
+  background-color: #7429c6;
+  border-radius: 50%;
+}
+.dot:not(:last-child) {
+  margin-right: 5px;
+}
+
+.letter-box {
+  font-size: 2rem;
+  height: 5rem;
+  width: 5rem;
+  border: 2px solid #4a5567;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.letter-box:hover {
+  border: 2px solid #672171;
+}
+
+.btn {
+  color: white;
+  font-size: 1.4rem;
+  background-color: #c951e7;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 3px #c951e7;
+}
+
+/*# sourceMappingURL=style.css.map */

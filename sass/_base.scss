@@ -4,7 +4,7 @@ $color-primary-2: #c951e7;
 $color-secondary: #672171;
 $text-light: #f2f5f9;
 // $text-grey: #b6;
-$text-dark-grey: #4a5567;
+$color-dark-grey: #4a5567;
 $color-dark: #030616;
 
 //RESPONSIVE BREAKPOINT
@@ -41,6 +41,11 @@ body {
   font-family: "Outfit", sans-serif;
   height: 100vh;
   background-image: url(../images/bg-guess-the-word.png);
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 // ::selection {
 //   background-color: $color-white;
