@@ -28,7 +28,7 @@ html {
 
 body {
   font-family: "Outfit", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../images/bg-guess-the-word.png);
   background-size: cover;
   background-position: center;
@@ -42,11 +42,16 @@ body {
   flex-direction: column;
   align-items: center;
   max-width: 50rem;
-  width: 90%;
+  width: 95%;
   padding: 3rem;
   border-radius: 8px;
   background-color: #030616;
   text-align: center;
+}
+@media only screen and (max-width: 18.75em) {
+  .card {
+    padding: 1rem;
+  }
 }
 .card__title {
   font-size: 2rem;
@@ -74,10 +79,21 @@ body {
   justify-content: space-between;
   width: 80%;
 }
+@media only screen and (max-width: 37.5em) {
+  .card__infos, .card__button-box {
+    max-width: 35rem;
+    width: 100%;
+  }
+}
 .card__infos .info {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__infos .info:not(:last-child) {
+    margin-right: 5%;
+  }
 }
 .card__infos .info__mistake-letters, .card__infos .info__dot-box {
   margin-left: 7px;
@@ -101,10 +117,21 @@ body {
 .card__button-box {
   padding: 0 2rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .card__button-box {
+    padding: 0 0;
+  }
+}
 .card__arranged-letters {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   margin: 6rem 0;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__arranged-letters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .card__arranged-letters .letter-box {
   font-size: 2rem;
@@ -129,6 +156,11 @@ body {
   padding: 1.3rem 4rem;
   border-radius: 10px;
   box-shadow: 0 5px 1px rgba(201, 81, 231, 0.5725490196);
+}
+@media only screen and (max-width: 37.5em) {
+  .btn:not(:last-child) {
+    margin-right: 5%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
