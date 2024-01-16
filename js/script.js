@@ -1,3 +1,12 @@
+"use strict";
+
+// Query Selectors
+const getElement = (selector) => document.querySelector(selector);
+const getAllElements = (selector) => document.querySelectorAll(selector);
+
+// Elements
+const scrambledWord = getElement(".card__scrambled-letters");
+
 // Fetch JSON words data
 let words;
 fetch("./words.json")
@@ -8,7 +17,7 @@ fetch("./words.json")
   })
   .catch((error) => console.error("Error fetching JSON:", error));
 
-// Get all input elements with the class 'single-char-input'
+// Get all input elements with the class
 const inputBoxes = document.querySelectorAll(".single-char-input");
 
 // Add an event listener to each input box

@@ -103,9 +103,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: transparent;
+      text-align: center;
 
-      &:hover {
+      &:focus {
         border: 2px solid $color-secondary;
+        outline: none;
       }
     }
   }
@@ -119,9 +122,15 @@
   padding: 1.3rem 4rem;
   border-radius: 10px;
   box-shadow: 0 5px 1px #c951e792;
+  cursor: pointer;
+  transition: all 0.2s;
   @media only screen and (max-width: $bp-phone) {
     &:not(:last-child) {
       margin-right: 5%;
     }
+  }
+  &:hover {
+    background-color: $color-secondary;
+    box-shadow: 0 5px 1px #531e5a;
   }
 }

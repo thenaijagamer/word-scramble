@@ -68,7 +68,7 @@ body {
   border-radius: 6px;
   padding: 2rem;
   letter-spacing: 2rem;
-  color: hsl(217, 16%, 65%);
+  color: #97a3b6;
   width: 100%;
   box-shadow: 0 7px 1px rgb(0, 0, 0);
 }
@@ -99,7 +99,7 @@ body {
   margin-left: 7px;
 }
 .card__infos .info__mistake-letters {
-  color: hsl(217, 16%, 65%);
+  color: #97a3b6;
 }
 .card__infos .info__dot-box {
   display: flex;
@@ -143,9 +143,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  text-align: center;
 }
-.card__arranged-letters .letter-box:hover {
+.card__arranged-letters .letter-box:focus {
   border: 2px solid #672171;
+  outline: none;
 }
 
 .btn {
@@ -156,11 +159,17 @@ body {
   padding: 1.3rem 4rem;
   border-radius: 10px;
   box-shadow: 0 5px 1px rgba(201, 81, 231, 0.5725490196);
+  cursor: pointer;
+  transition: all 0.2s;
 }
 @media only screen and (max-width: 37.5em) {
   .btn:not(:last-child) {
     margin-right: 5%;
   }
+}
+.btn:hover {
+  background-color: #672171;
+  box-shadow: 0 5px 1px #531e5a;
 }
 
 /*# sourceMappingURL=style.css.map */
