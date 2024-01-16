@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "scrambled": "htulb", "correct": "bluth" },
+    { "scrambled": "odg", "correct": "dog" },
+    { "scrambled": "pamn", "correct": "lamp" },
+    { "scrambled": "ydrona", "correct": "random" },
+    { "scrambled": "ctaa", "correct": "taca" },
+    { "scrambled": "rnug", "correct": "rung" },
+    { "scrambled": "aemht", "correct": "math" },
+    { "scrambled": "pdeocur", "correct": "produce" },
+    { "scrambled": "hswero", "correct": "whoers" },
+    { "scrambled": "ltru", "correct": "curl" }
+  ]
+}
