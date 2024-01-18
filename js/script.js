@@ -7,15 +7,50 @@ const getAllElements = (selector) => document.querySelectorAll(selector);
 // Elements
 const scrambledWord = getElement(".card__scrambled-letters");
 
+// Buttons
+const btnReset = getElement(".btn--reset");
+const btnRandom = getElement(".btn--random");
+
+// generate scrambled word
+
 // Fetch JSON words data
-let words;
-fetch("./words.json")
-  .then((response) => response.json())
-  .then((data) => {
-    words = data.words;
-    console.log(words);
-  })
-  .catch((error) => console.error("Error fetching JSON:", error));
+// Define a global variable to store the cached JSON data
+let wordsArr;
+
+// Function to fetch and cache the JSON data
+const fetchAndCacheJson = async () => {
+  if (!wordsArr) {
+    try {
+      const response = await fetch("./words.json");
+      const data = await response.json();
+      wordsArr = data.words;
+    } catch (error) {
+      console.error("Error fetching JSON:", error);
+    }
+  }
+
+  return wordsArr;
+};
+
+const generateScrambledWord = async () => {
+  const words = await fetchAndCacheJson();
+  const randNum = Math.floor(Math.random() * words.length);
+  const randScrambled = await words[randNum].scrambled;
+  scrambledWord.textContent = randScrambled;
+};
+generateScrambledWord();
+
+btnRandom.addEventListener("click", generateScrambledWord);
+
+// fetch("./words.json")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     const words = data.words;
+//     const randNum = Math.floor(Math.random() * words.length);
+//     const randScrambled = words[randNum].scrambled;
+//     scrambledWord.textContent = randScrambled;
+//   })
+//   .catch((error) => console.error("Error fetching JSON:", error));
 
 // Get all input elements with the class
 const inputBoxes = document.querySelectorAll(".single-char-input");
