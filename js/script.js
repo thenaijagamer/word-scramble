@@ -6,14 +6,12 @@ const getAllElements = (selector) => document.querySelectorAll(selector);
 
 // Elements
 const scrambledWord = getElement(".card__scrambled-letters");
+const arrangedWord = getElement(".card__arranged-letters");
 
 // Buttons
 const btnReset = getElement(".btn--reset");
 const btnRandom = getElement(".btn--random");
 
-// generate scrambled word
-
-// Fetch JSON words data
 // Define a global variable to store the cached JSON data
 let wordsArr;
 
@@ -35,10 +33,20 @@ const fetchAndCacheJson = async () => {
 const generateScrambledWord = async () => {
   const words = await fetchAndCacheJson();
   const randNum = Math.floor(Math.random() * words.length);
-  const randScrambled = await words[randNum].scrambled;
-  scrambledWord.textContent = randScrambled;
+  const scrambledLetters = await words[randNum].scrambled;
+  scrambledWord.textContent = scrambledLetters;
+  arrangedWord.innerHTML = "";
+  for (let i = 0; i < scrambledLetters.length; i++) {
+    arrangedWord.insertAdjacentHTML(
+      "afterbegin",
+      `<input class="letter-box" type="text" maxlength="1" />`
+    );
+  }
 };
-generateScrambledWord();
+generateScrambledWord().then(() => {
+  const inputBoxes = document.querySelectorAll(".letter-box");
+  console.log([...inputBoxes]);
+});
 
 btnRandom.addEventListener("click", generateScrambledWord);
 
@@ -53,24 +61,47 @@ btnRandom.addEventListener("click", generateScrambledWord);
 //   .catch((error) => console.error("Error fetching JSON:", error));
 
 // Get all input elements with the class
-const inputBoxes = document.querySelectorAll(".single-char-input");
 
 // Add an event listener to each input box
-inputBoxes.forEach((input, index) => {
-  input.addEventListener("input", (event) => {
-    const currentInput = event.target;
-    const nextInput = inputBoxes[index + 1];
+// const inputBoxes = document.querySelectorAll(".letter-box");
+// console.log([...inputBoxes]);
 
-    // If the input has a value, move focus to the next input
-    if (currentInput.value && nextInput) {
-      nextInput.focus();
-    }
-  });
+// const getAllInput = async () => {
+//   const inputBoxes = getAllElements(".letter-box");
+//   console.log([...inputBoxes]);
+// };
+// getAllInput();
+window.addEventListener("load", () => {
+  const inputBoxes = getAllElements(".letter-box");
+  const inputBoxes2 = document.getElementsByClassName(".letter-box");
 
-  // Add an event listener to move focus back when the input is cleared
-  input.addEventListener("keydown", (event) => {
-    if (event.key === "Backspace" && !input.value && index > 0) {
-      inputBoxes[index - 1].focus();
-    }
-  });
+  console.log([...inputBoxes], [...inputBoxes2], inputBoxes, inputBoxes2);
 });
+
+// inputBoxes.forEach((input, index) => {
+//   input.addEventListener("input", (event) => {
+//     const currentInput = event.target;
+//     const nextInput = inputBoxes[index + 1];
+
+//     // If the input has a value, move focus to the next input
+//     if (currentInput.value && nextInput) {
+//       nextInput.focus();
+//     }
+//   });
+
+// // Add an event listener to move focus back when the input is cleared
+//   input.addEventListener("keydown", (event) => {
+//     if (event.key === "Backspace" && !input.value && index > 0) {
+//       inputBoxes[index - 1].focus();
+//     }
+//   });
+// });
+const parentElement = document.getElementById("parent");
+
+// Using childNodes
+const childNodes = parentElement.childNodes;
+console.log(childNodes); // Output: 5 (includes text nodes)
+
+// Using children
+const children = parentElement.children;
+console.log(children); // Output: 2 (only includes

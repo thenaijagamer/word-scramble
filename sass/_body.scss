@@ -69,7 +69,8 @@
         .dot {
           height: 7px;
           width: 7px;
-          background-color: $color-primary-1;
+          background-color: $color-dark-grey;
+          // background-color: $color-primary-1;
           border-radius: 50%;
           &:not(:last-child) {
             margin-right: 5px;
