@@ -122,7 +122,7 @@
   border: none;
   padding: 1.3rem 4rem;
   border-radius: 10px;
-  box-shadow: 0 5px 1px #c951e792;
+  box-shadow: 0 5px 1px hsla(288, 76%, 61%, 0.573);
   cursor: pointer;
   transition: all 0.2s;
   @media only screen and (max-width: $bp-phone) {
@@ -131,7 +131,7 @@
     }
   }
   &:hover {
-    background-color: $color-secondary;
-    box-shadow: 0 5px 1px #531e5a;
+    background-color: hsl(288, 76%, 41%);
+    box-shadow: 0 5px 1px hsla(288, 76%, 42%, 0.573);
   }
 }

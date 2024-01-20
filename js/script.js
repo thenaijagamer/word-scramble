@@ -26,6 +26,7 @@ fetch("./words.json")
       const scrambledLetters = words[randNum].scrambled;
       const correctLetters = words[randNum].correct;
       let dotNum = 0;
+      let incorrectLetters = [];
       scrambledWord.textContent = scrambledLetters;
       arrangedWord.innerHTML = "";
       for (let i = 0; i < scrambledLetters.length; i++) {
@@ -34,25 +35,41 @@ fetch("./words.json")
           `<input class="letter-box" type="text" maxlength="1" disabled />`
         );
       }
-
-      // Add an event listener to each input box
+      // Other Initialization after adding letter-box element
       const firstInputBox = getElement(".letter-box");
       const inputBoxes = getAllElements(".letter-box");
       firstInputBox.disabled = false;
       firstInputBox.focus();
-      let incorrectLetters = [];
-      console.log([...inputBoxes]);
+
+      // Reset all the records
+      const reset = () => {
+        dotNum = 0;
+        incorrectLetters = [];
+        dots.forEach((dot) => {
+          dot.style.backgroundColor = "#4a5567";
+        });
+        inputBoxes.forEach((input, i, allInputs) => {
+          input.value = "";
+          allInputs[0].focus();
+        });
+        incorrectLettersBox.textContent = "nil";
+        triesCount.textContent = 0;
+      };
+
+      // Inputs functionality
       inputBoxes.forEach((input, index, allInputs) => {
         input.addEventListener("input", () => {
           const nextInput = allInputs[index + 1];
           // If the input has a value, move focus to the next input
-          if (
-            input.value &&
-            correctLetters[index] === input.value &&
-            index < allInputs.length
-          ) {
+          if (input.value && input.value === correctLetters[index]) {
             if (index + 1 === allInputs.length) {
-              alert("You won");
+              setTimeout(() => {
+                alert("You won 👏");
+                generateScrambledWord();
+              }, 1000);
+              allInputs.forEach((input) => {
+                input.style.borderColor = "green";
+              });
             } else {
               nextInput.disabled = false;
               nextInput.focus();
@@ -62,21 +79,28 @@ fetch("./words.json")
             incorrectLetters.push(input.value);
             incorrectLettersBox.textContent = incorrectLetters.join(",");
             input.value = "";
-            dotNum++;
-            [...dots][dotNum - 1].style.backgroundColor = "#7429c6";
-            triesCount.textContent = dotNum;
+            if (dotNum >= 5) {
+              reset();
+            } else {
+              dotNum++;
+              [...dots][dotNum - 1].style.backgroundColor = "#7429c6";
+              triesCount.textContent = dotNum;
+            }
           }
         });
 
         // Add an event listener to move focus back when the input is cleared
-        input.addEventListener("keydown", (e) => {
-          if (e.key === "Backspace" && !input.value && index > 0) {
-            input.disabled = true;
-            allInputs[index - 1].focus();
-            allInputs[index - 1].value = "";
-          }
-        });
+        // input.addEventListener("keydown", (e) => {
+        //   if (e.key === "Backspace" && !input.value && index > 0) {
+        //     input.disabled = true;
+        //     allInputs[index - 1].focus();
+        //     allInputs[index - 1].value = "";
+        //   }
+        // });
       });
+
+      // Event handler to reset
+      btnReset.addEventListener("click", reset);
 
       // Check if the input value is correct
     };
@@ -84,6 +108,7 @@ fetch("./words.json")
     // Initialize the game automatically
     generateScrambledWord();
 
+    // Event handler to generate new scrambled Word
     btnRandom.addEventListener("click", generateScrambledWord);
   })
   .catch((error) => console.error("Error fetching JSON:", error));
