@@ -92,6 +92,7 @@
     margin: 6rem 0;
     @media only screen and (max-width: $bp-phone) {
       flex-wrap: wrap;
+      gap: 0.9rem;
       justify-content: center;
     }
     .letter-box {
@@ -99,14 +100,17 @@
       height: 5rem;
       width: 5rem;
       border: 2px solid $color-dark-grey;
-      border-radius: 9px;
+      border-radius: 0.9rem;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: transparent;
       text-align: center;
-
+      @media only screen and (max-width: $bp-phone) {
+        height: 4rem;
+        width: 4rem;
+      }
       &:focus {
         border: 2px solid $color-secondary;
         outline: none;

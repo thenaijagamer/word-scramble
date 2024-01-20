@@ -66,9 +66,9 @@ fetch("./words.json")
               setTimeout(() => {
                 alert("You won 👏");
                 generateScrambledWord();
-              }, 1000);
+              }, 500);
               allInputs.forEach((input) => {
-                input.style.borderColor = "green";
+                input.style.borderColor = "#672171";
               });
             } else {
               nextInput.disabled = false;

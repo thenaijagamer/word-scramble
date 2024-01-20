@@ -130,6 +130,7 @@ body {
 @media only screen and (max-width: 37.5em) {
   .card__arranged-letters {
     flex-wrap: wrap;
+    gap: 0.9rem;
     justify-content: center;
   }
 }
@@ -138,13 +139,19 @@ body {
   height: 5rem;
   width: 5rem;
   border: 2px solid #4a5567;
-  border-radius: 9px;
+  border-radius: 0.9rem;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
   text-align: center;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__arranged-letters .letter-box {
+    height: 4rem;
+    width: 4rem;
+  }
 }
 .card__arranged-letters .letter-box:focus {
   border: 2px solid #672171;
