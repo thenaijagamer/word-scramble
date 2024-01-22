@@ -10,10 +10,20 @@ const arrangedWord = getElement(".card__arranged-letters");
 const incorrectLettersBox = getElement(".info__mistake-letters");
 const triesCount = getElement(".info__tries-name span");
 const dots = getAllElements(".dot");
-
+const loadingElement = document.querySelector(".loader-box");
+// const contentElement = document.querySelector(".loader-box");
 // Buttons
 const btnReset = getElement(".btn--reset");
 const btnRandom = getElement(".btn--random");
+
+// Loading functionality
+window.addEventListener("load", () => {
+  // All web content has finished loading
+  setTimeout(() => {
+    loadingElement.style.opacity = "0";
+    setTimeout(() => (loadingElement.style.zIndex = "-1"), 500);
+  }, 1000); // Hide loading element
+});
 
 // Fetch data
 fetch("./words.json")
@@ -55,11 +65,14 @@ fetch("./words.json")
         incorrectLettersBox.textContent = "nil";
         triesCount.textContent = 0;
       };
-
+      reset();
       // Inputs functionality
       inputBoxes.forEach((input, index, allInputs) => {
         input.addEventListener("input", () => {
           const nextInput = allInputs[index + 1];
+          // Make sure all inputs are lower case
+          input.value = input.value.toLowerCase();
+
           // If the input has a value, move focus to the next input
           if (input.value && input.value === correctLetters[index]) {
             if (index + 1 === allInputs.length) {
@@ -75,17 +88,19 @@ fetch("./words.json")
               nextInput.focus();
             }
           } else {
-            console.log("wrong letter", input.value);
-            incorrectLetters.push(input.value);
-            incorrectLettersBox.textContent = incorrectLetters.join(",");
-            input.value = "";
-            if (dotNum >= 5) {
-              reset();
-            } else {
-              dotNum++;
-              [...dots][dotNum - 1].style.backgroundColor = "#7429c6";
-              triesCount.textContent = dotNum;
+            if (input.value !== " ") {
+              incorrectLetters.push(input.value);
+              incorrectLettersBox.textContent = incorrectLetters.join(",");
+              if (dotNum >= 5) {
+                reset();
+              } else {
+                dotNum++;
+                [...dots][dotNum - 1].style.backgroundColor = "#7429c6";
+                triesCount.textContent = dotNum;
+              }
             }
+
+            input.value = "";
           }
         });
 
