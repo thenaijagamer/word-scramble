@@ -2,13 +2,26 @@
   "words": [
     { "scrambled": "htulb", "correct": "bluth" },
     { "scrambled": "odg", "correct": "dog" },
-    { "scrambled": "pamn", "correct": "lamp" },
-    { "scrambled": "ydrona", "correct": "random" },
+    { "scrambled": "paml", "correct": "lamp" },
+    { "scrambled": "mdrona", "correct": "random" },
     { "scrambled": "ctaa", "correct": "taca" },
-    { "scrambled": "rnug", "correct": "rung" },
-    { "scrambled": "aemht", "correct": "mathe" },
+    { "scrambled": "rngu", "correct": "rung" },
+    { "scrambled": "amht", "correct": "math" },
     { "scrambled": "pdeocur", "correct": "produce" },
-    { "scrambled": "hswero", "correct": "whoers" },
-    { "scrambled": "ltru", "correct": "curl" }
+    { "scrambled": "lcru", "correct": "curl" },
+    { "scrambled": "veevol", "correct": "evolve" },
+    { "scrambled": "srenet", "correct": "resent" },
+    { "scrambled": "sirpit", "correct": "spirit" },
+    { "scrambled": "shfro", "correct": "frosh" },
+    { "scrambled": "cuqki", "correct": "quick" },
+    { "scrambled": "seapd", "correct": "spade" },
+    { "scrambled": "htlisg", "correct": "lights" },
+    { "scrambled": "edbhae", "correct": "behead" },
+    { "scrambled": "rhcoe", "correct": "chore" },
+    { "scrambled": "fritu", "correct": "fruit" },
+    { "scrambled": "mhamre", "correct": "hammer" },
+    { "scrambled": "ploee", "correct": "elope" },
+    { "scrambled": "osrte", "correct": "store" },
+    { "scrambled": "ewathr", "correct": "wreath" }
   ]
 }
