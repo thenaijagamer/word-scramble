@@ -112,13 +112,3 @@ fetch("./words.json")
     btnRandom.addEventListener("click", generateScrambledWord);
   })
   .catch((error) => console.error("Error fetching JSON:", error));
-
-// const parentElement = document.getElementById("parent");
-
-// // Using childNodes
-// const childNodes = parentElement.childNodes;
-// console.log(childNodes); // Output: 5 (includes text nodes)
-
-// // Using children
-// const children = parentElement.children;
-// console.log(children); // Output: 2 (only includes
